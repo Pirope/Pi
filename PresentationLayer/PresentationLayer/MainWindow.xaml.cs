@@ -32,28 +32,28 @@ namespace PresentationLayer
         private void btnAddStaff_Click(object sender, RoutedEventArgs e)
         {
             txtOutput.Text = "";
-            if (!healthSystem.addStaff(1, "James", "Henry", "21 Accia Road", "Edinburgh", "General Practitioner", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(1, "James", "Henry", "21 Accia Road", "Edinburgh", StaffCategory.General_Practitioner, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if (!healthSystem.addStaff(2, "Sally", "Wilson", "21 Accia Road", "Edinburgh", "General Practitioner", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(2, "Sally", "Wilson", "21 Accia Road", "Edinburgh", StaffCategory.General_Practitioner, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if (!healthSystem.addStaff(3, "Roland", "Smith", "21 Accia Road", "Edinburgh", "Social Worker", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(3, "Roland", "Smith", "21 Accia Road", "Edinburgh", StaffCategory.Social_Worker, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if (!healthSystem.addStaff(4, "Mary", "Jones", "21 Accia Road", "Edinburgh", "Social Worker", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(4, "Mary", "Jones", "21 Accia Road", "Edinburgh", StaffCategory.Social_Worker, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if(!healthSystem.addStaff(5, "Phillip", "Jones", "21 Accia Road", "Edinburgh", "Community Nurse", 55.932221, -3.214164))
+            if(!healthSystem.addStaff(5, "Phillip", "Jones", "21 Accia Road", "Edinburgh", StaffCategory.Community_Nurse, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if (!healthSystem.addStaff(6, "Martha", "Rigg", "21 Accia Road", "Edinburgh", "Community Nurse", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(6, "Martha", "Rigg", "21 Accia Road", "Edinburgh", StaffCategory.Community_Nurse, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if (!healthSystem.addStaff(7, "Mike", "Heathcoat", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(7, "Mike", "Heathcoat", "21 Accia Road", "Edinburgh", StaffCategory.Community_Nurse, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
-            if (!healthSystem.addStaff(8, "Jo", "Shaw", "21 Accia Road", "Edinburgh", "Care Worker", 55.932221, -3.214164))
+            if (!healthSystem.addStaff(8, "Jo", "Shaw", "21 Accia Road", "Edinburgh", StaffCategory.Community_Nurse, 55.932221, -3.214164))
                 txtOutput.Text += " Staff member not added \n";
 
             txtOutput.Text += healthSystem.getStaffList() +"\n";

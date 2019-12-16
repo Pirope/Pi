@@ -1,30 +1,39 @@
-﻿using System;
+﻿using DataLayer.Models;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics;
+using System.Linq;
 
 namespace BusinessLayer
 {
-
-    public static class visitTypes
-    {
-        public const int assessment = 0;
-        public const int medication = 1;
-        public const int bath = 2;
-        public const int meal = 3;
-    }
     public class HealthFacade
     {
-       
+        List<Staff> staffList = new List<Staff>();
+        List<Client> clientList = new List<Client>();
 
+        public Boolean addStaff(int id, string firstName, string surname, string address1, string address2, StaffCategory category, double baseLocLat, double baseLocLon)
+        {            
+            var newStaff = new Staff(id, firstName, surname, address1, address2, category, baseLocLat, baseLocLon)
+            {
+                Id = id,
+                FirstName = firstName,
+                Surname = surname,
+                Address1 = address1,
+                Address2 = address2,
+                Category = category,
+                BaseLocLat = baseLocLat,
+                BaseLocLon = baseLocLon
+            };
+            try
+            {
+                staffList.Add(newStaff);
+                return true;
+            }
+            catch (System.Exception)
+            {
 
-        public Boolean addStaff(int id, string firstName, string surname, string address1, string address2, string category, double baseLocLat, double baseLocLon)
-        {
-            /*
-             * Add your implementation here!
-             */ 
-
-   
-            return false;
+                return false;
+            }
         }
 
         public Boolean addClient(int id, string firstName, string surname, string address1, string address2, double locLat, double locLon)
@@ -49,9 +58,16 @@ namespace BusinessLayer
 
         public String getStaffList()
         {
-            String result = "Staff list not implemented!\n";
-
-            return result;
+            if (staffList == null)
+            {
+                return "Staff list not implemented!\n";
+            }
+            else
+            {        
+              var result = string.Concat(staffList.Select(s => s.FirstName + " " + s.Surname + " - " + s.Address1 + " - " 
+                                                         + s.Address2 + " - " + s.Category + " - " + s.BaseLocLat + " - " + s.BaseLocLon + "\n"));
+                return result;
+            }
         }
 
         public String getClientList()
